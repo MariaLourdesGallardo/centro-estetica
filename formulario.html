@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Formulario de Cita con Calendario</title>
+
+    <!-- Incluye las bibliotecas de jQuery y jQuery UI -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Agrega un estilo CSS personalizado para el calendario -->
+    <style>
+        .ui-datepicker {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <form id="citaForm" action="javascript:void(0)">
+
+        <label for="nombre">Nombre del Cliente:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br>
+
+        <label for="servicio">Tipo de Servicio:</label>
+        <select id="servicio" name="servicio" required>
+            <option value="" disabled selected>Selecciona un servicio</option>
+            <option value="Corte">Corte de Cabello</option>
+            <option value="Coloracion">Coloración</option>
+            <option value="Manicura">Manicura</option>
+            <option value="Pedicura">Pedicura</option>
+            <option value="Maquillaje">Maquillaje</option>
+            <option value="Spa">Tratamiento de Spa</option>
+        </select>
+        <br>
+
+        <label for="fecha">Fecha de la Cita:</label>
+        <input type="text" id="fecha" name="fecha" required>
+        <br>
+
+        <label for="horario">Horario de la Cita:</label>
+        <select id="horario" name="horario" required>
+            <option value="" disabled selected>Selecciona un horario</option>
+            <option value="09:00">09:00 AM</option>
+            <option value="10:00">10:00 AM</option>
+            <option value="11:00">11:00 AM</option>
+            <option value="12:00">12:00 PM</option>
+            <!-- Agrega más horarios según sea necesario -->
+        </select>
+        <br>
+
+
+        <!-- Otros campos del formulario -->
+
+        <input type="submit" value="Reservar Cita">
+    </form>
+
+
+    <script src="formulario..js"></script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Cita y Facturación</title>
+</head>
+
+<body>
+
+    <h1>Confirmación de Cita</h1>
+    <p>Nombre del Cliente: <span id="nombreCliente"></span></p>
+    <p>Servicio: <span id="servicioCliente"></span></p>
+    <p>Fecha: <span id="fechaCliente"></span></p>
+    <p>Hora: <span id="horarioCliente"></span></p>
+    <!-- Mostrar otros detalles de la cita según sea necesario -->
+
+    <!-- Opciones de pago -->
+    <h2>Opciones de Pago:</h2>
+    <form id="formularioPago">
+        <label for="metodoPago">Método de Pago:</label>
+        <select id="metodoPago" name="metodoPago">
+            <option value="tarjeta">Tarjeta de Crédito</option>
+            <option value="efectivo">Efectivo</option>
+            <option value="transferencia">Transferencia Bancaria</option>
+        </select>
+        <br>
+
+        <input type="submit" value="Confirmar Cita y Pagar">
+
+        <script>
+            // Recupera el nombre del cliente de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const nombre = urlParams.get("nombre");
+            const servicio = urlParams.get("servicio");
+            const fecha = urlParams.get("fecha");
+            const horario = urlParams.get("horario");
+
+            // Muestra el nombre del cliente en la página
+            document.getElementById("nombreCliente").textContent = nombre;
+            document.getElementById("servicioCliente").textContent = servicio;
+            document.getElementById("fechaCliente").textContent = fecha;
+            document.getElementById("horarioCliente").textContent = horario;
+            // Muestra otros detalles de la cita según sea necesario
+
+
+
+
+            // Agregar un manejador de eventos al formulario de pago
+            const formularioPago = document.getElementById("formularioPago");
+            formularioPago.addEventListener("submit", function (event) {
+                event.preventDefault();
+                const metodoPago = document.getElementById("metodoPago").value;
+                alert(`¡Cita confirmada! Método de pago: ${metodoPago}`);
+                // Aquí puedes agregar el código para procesar el pago, si es necesario.
+            });
+        </script>
+
+
+</body>
+
+</html>
